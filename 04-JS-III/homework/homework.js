@@ -3,18 +3,21 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
+  return array[0];
 }
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+  return array [array.lenght - 1];
 }
 
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
+  return array.lenght;
 }
 
 
@@ -23,6 +26,10 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
+  for (let i = 0 ; i < array.lenght; i++){
+    array[i]++;
+    return array[i];
+  }
 }
 
 
@@ -30,6 +37,8 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
+  array.push(elemento);
+  return array;
 }
 
 
@@ -38,6 +47,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+  array.unshift (elemento);
+  return array;
 }
 
 
@@ -47,6 +58,11 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+  var longstring = null;
+  for (let i = 0; i < palabras.length; i++) {
+    longstring = longstring + " " + palabras[i];
+  }
+  return longstring;
 }
 
 
@@ -54,6 +70,11 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === null) {
+      return false;
+    }
+    return true;
 }
 
 
@@ -61,6 +82,12 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+  var  i = 0 , suma;
+  do  {
+    suma = suma + numeros[i];
+    i++;
+  } while (i < numeros.length);
+  return suma;
 }
 
 
@@ -68,27 +95,42 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  var  i = 0 , suma;
+  do  {
+    suma = suma + numeros[i];
+    i++;
+  } while (i < numeros.length);
+  var prome = suma/numeros.lenght;
+  return prome;
 }
+
 
 
 function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  return Math.max (numeros);
 }
 
 
-function multiplicarArgumentos() {
+function multiplicarArgumentos(arguments) {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  var  i = 0 , multiArg = 1;
+  do  {
+  multiArg = multiArg * arguments[i];
+    i++;
+  } while (i < arguments.length);
+  return multiArg;
 }
 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-
+  return (arreglo.lenght);
 }
 
 
@@ -97,7 +139,16 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  
+  if (numeroDeDia === 1 ||numeroDeDia === 2 || numeroDeDia === 3 || numeroDeDia === 4 || numeroDeDia === 5){
+    return "Es dia Laboral";
+  }
+  else if (numeroDeDia === 6 || numeroDeDia === 7){
+    return "Es fin de semana"; 
+  }
+  else {
+    return "Error"
+  }
+  }
 } 
 
 
@@ -105,7 +156,12 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  
+  if (n==9){
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 
